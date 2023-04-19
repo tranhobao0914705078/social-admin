@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import { Login } from './Pages/Account';
 import { Admin } from './Pages/Admin/Admin';
 import { PrivateRoute } from './components';
+import { AccountRoute } from './components/AccountRoute';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<PrivateRoute><Login /></PrivateRoute>} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<AccountRoute><Admin /></AccountRoute>} />
         </Routes>
       </Router>
     </div>
