@@ -6,11 +6,11 @@ import { AccountState } from '../store/Account/types';
 import { useSelector } from 'react-redux';
 import { AppState } from '../store';
 
-export const PrivateRoute = ({ children, ...rest}: RouteProps): JSX.Element => {
+export const AccountRoute = ({ children, ...rest}: RouteProps): JSX.Element => {
 
     const account: AccountState = useSelector((state: AppState) => state.account);
     if (account.token) {
-        return <Navigate to="/admin/home" />;
+        return <Navigate to="/admin" />;
     }
     return (
         <React.Fragment>
